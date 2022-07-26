@@ -1,21 +1,25 @@
-// TITLE: Sort array by string length
+// TITLE: Who likes it?
+
 //
 // DESCRIPTION:
-// Write a function that takes an array of strings as an argument and returns a sorted array containing the same strings, ordered from shortest to longest.
+// You probably know the "like" system from Facebook and other pages. People can "like" blog posts, pictures or other items. We want to create the text that should be displayed next to such an item.
 //
-// For example, if this array were passed as an argument:
+// Implement the function which takes an array containing the names of people that like an item. It must return the display text as shown in the examples:
 //
-// ["Telescopes", "Glasses", "Eyes", "Monocles"]
-//
-// Your function would return the following array:
-//
-// ["Eyes", "Glasses", "Monocles", "Telescopes"]
-//
-// All of the strings in the array passed to your function will be different lengths, so you will not have to decide how to order multiple strings of the same length.
+// []                                -->  "no one likes this"
+// ["Peter"]                         -->  "Peter likes this"
+// ["Jacob", "Alex"]                 -->  "Jacob and Alex like this"
+// ["Max", "John", "Mark"]           -->  "Max, John and Mark like this"
+// ["Alex", "Jacob", "Mark", "Max"]  -->  "Alex, Jacob and 2 others like this"
+// Note: For 4 or more names, the number in "and 2 others" simply increases.
 
 Solution:
 
-function sortByLength (array) {
-  // Return an array containing the same strings, ordered from shortest to longest
-  return array.sort((x,y) => x.length - y.length);
-};
+function likes(names) {
+  // TODO
+  if(names.length === 0) return "no one likes this";
+  if(names.length === 1) return names[0] + " likes this";
+  if(names.length === 2) return names[0] + " and " + names[1] + " like this";
+  if(names.length === 3) return names[0] + ", " + names[1] + " and " + names[2] + " like this";
+  return names[0] + ", " + names[1] + " and " + (names.length - 2) + " others like this";
+}
