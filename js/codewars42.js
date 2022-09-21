@@ -1,4 +1,5 @@
-// TITLE:Sum Arrays
+// TITLE:Max-min arrays
+
 
 
 // DESCRIPTION:

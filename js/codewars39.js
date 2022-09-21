@@ -1,19 +1,23 @@
-// TITLE:For Twins: 1. Types
+// TITLE:Merge two arrays
 
 
 // DESCRIPTION:
-// This kata series was created for friends of mine who just started to learn programming. Wish you all the best and keep your mind open and sharp!
-//
-// Task:
-// Write a function that will accept two parameters: variable and type and check if type of variable is matching type. Return true if types match or false if not.
+// Write a function that combines two arrays by alternatingly taking elements from each array in turn.
 //
 // Examples:
-// 42, "number"   --> true
-// "42", "number" --> false
+//
+// [a, b, c, d, e], [1, 2, 3, 4, 5] becomes  [a, 1, b, 2, c, 3, d, 4, e, 5]
+//
+// [1, 2, 3], [a, b, c, d, e, f] becomes [1, a, 2, b, 3, c, d, e, f]
+// Points:
+//
+// The arrays may be of different lengths, with at least one character/digit.
+// One array will be of string characters (in lower case, a-z), a second of integers (all positive starting at 1).
 
 Solution
-function typeValidation(variable, type) {
-  // Your code should be here ;)
-  if (variable === 42 && type === "number") return true
-  if (variable === "42" && type === "number") return false
-}
+const mergeArrays = (a, b) => [
+  ...a.map((v) => {
+    return b.length ? [v, b.shift()] : [v];
+  }),
+  b
+].reduce((acc, cur) => acc.concat(cur), []);
