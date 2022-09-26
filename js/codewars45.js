@@ -10,6 +10,5 @@
 
 function cockroachSpeed(s) {
   //Good Luck!
-  let result = s * 27.78
-  return Math.floor(result)
-}
+    return Math.floor(s * 100000 / 3600);
+  }
