@@ -1,16 +1,12 @@
-// TITLE: Mumbling
+// TITLE: Returning Strings
 
 //
 // // DESCRIPTION:
-// This time no story, no theory. The examples below show you how to write function accum:
+// Make a function that will return a greeting statement that uses an input; your program should return, "Hello, <name> how are you doing today?".
 //
-// Examples:
-// accum("abcd") -> "A-Bb-Ccc-Dddd"
-// accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
-// accum("cwAt") -> "C-Ww-Aaa-Tttt"
-// The parameter of accum is a string which includes only letters from a..z and A..Z.
+// [Make sure you type the exact thing I wrote or the program may not execute properly]
 
-function accum(s) {
-	// your code
-return [...s].map((char, index) => (char.toUpperCase() + char.toLowerCase().repeat(index))).join("-")
+function greet(name){
+  //your code here
+  return `Hello, ${name} how are you doing today?`
 }
